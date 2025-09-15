@@ -6,12 +6,15 @@ return {
         config = function()
             require("telescope").setup({
                 defaults = {
-                    file_ignore_patterns = { "^.git/", "node_modules/", "dist/", "build/" },
+                    file_ignore_patterns = { "^.git/", "node_modules/", "dist/", "build/", "/home/kush/go/"},
                 },
             })
             local builtin = require("telescope.builtin")
             vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
-            vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
+            -- vim.keymap.set("n", "<leader>fg", builtin.live_grep, {hidden = true, desc = "Telescope live grep" })
+            vim.keymap.set("n", "<leader>fg", function()
+                builtin.live_grep({ hidden = true, prompt_title = "Telescope live grep" })
+            end, { desc = "Telescope live grep" })
             vim.keymap.set("n", "<leader>fh", function()
                 builtin.find_files({ hidden = true, prompt_title = "Find Hidden Files" })
             end, { desc = "Telescope find hidden files" })
