@@ -13,9 +13,9 @@ return {
                 capabilities = capabilities
             }
             vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-            vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, {})
-            vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
-            vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
+            vim.keymap.set('n', '<leader>ld', vim.lsp.buf.definition, {desc = "Go to definition"})
+            vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, {desc = "List references"})
+            vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, {desc = "Code action"})
         end
     }
 }
