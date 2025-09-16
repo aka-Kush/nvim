@@ -1,11 +1,10 @@
 return {
-  "folke/noice.nvim",
-  opts = {
-    messages = { enabled = true },
-    notify = { enabled = true },
-    presets = {
-      bottom_search = true,  -- better search UI
-      command_palette = true, -- enhanced command line UI
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {},
+    dependencies = {
+        "MunifTanjim/nui.nvim",
+        "rcarriga/nvim-notify",
     },
-  }
+    vim.keymap.set("n", "<leader>nd", "<cmd>Noice dismiss<cr>", { desc = "Dismiss all Notifications" }),
 }
