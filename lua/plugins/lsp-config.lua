@@ -8,6 +8,10 @@ return {
                 cmd = { "lua-language-server" },
                 capabilities = capabilities
             }
+            lspconfig.pyright.setup{
+                cmd = { "pyright-langserver", "--stdio" },
+                capabilities = capabilities
+            }
             lspconfig.nixd.setup{
                 cmd = { "nixd" },
                 capabilities = capabilities

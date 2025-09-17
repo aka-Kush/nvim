@@ -53,6 +53,7 @@ vim.opt.updatetime = 300       -- Faster completion
 -- Misc
 vim.opt.hidden = true          -- Allow switching buffers without saving
 vim.opt.iskeyword:append('-')  -- Treat dash-separated words as a word
+vim.o.autochdir = true      -- Change working directory to the open file's directory
 
 -- keymaps
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
