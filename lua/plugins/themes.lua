@@ -34,4 +34,15 @@ return {
             end
         end,
     },
+    {
+        'Mofiqul/dracula.nvim',
+        name = "dracula",
+        priority = 1000,
+        lazy = false,
+        config = function()
+            if theme == "dracula" then
+                vim.cmd.colorscheme("dracula")
+            end
+        end,
+    },
 }
