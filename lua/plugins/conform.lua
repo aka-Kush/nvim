@@ -6,7 +6,7 @@ return {
 			lua = { "stylua" },
 			python = { "black", "isort" },
 			nix = { "nixfmt" },
-			go = { "goimports-reviser" },
+			go = { "goimports-reviser", "gofmt" },
 		},
 		format_on_save = true,
 	},
