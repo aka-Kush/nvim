@@ -109,3 +109,14 @@ vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, { desc = "Code action
 
 -- Formatting
 vim.keymap.set("n", "<leader>nf", vim.lsp.buf.format, {})
+
+-- Highlight on yank
+vim.api.nvim_create_augroup("highlight_yank", { clear = true })
+vim.api.nvim_create_autocmd("TextYankPost", {
+	group = "highlight_yank",
+	pattern = "*",
+	callback = function()
+		vim.highlight.on_yank({ higroup = "IncSearch", timeout = 500 })
+	end,
+	desc = "Highlight text on yank",
+})
